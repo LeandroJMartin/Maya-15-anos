@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@Layer base {
+  input, textarea {
+    @apply outline-none text-black
+  }
+}
+
+@font-face {
+  font-family: Maya-bold-expanded;
+  src: url(../../assets/font/Maya-Bold-Expanded.otf);
+}
+@font-face {
+  font-family: Maya-bold-italic;
+  src: url(../../assets/font/Maya-Bold-Italic.otf);
+}
+@font-face {
+  font-family: Maya-bold;
+  src: url(../../assets/font/Maya-Bold.otf);
+}
+@font-face {
+  font-family: Maya-expanded;
+  src: url(../../assets/font/Maya-Expanded.otf);
+}
+@font-face {
+  font-family: Maya-expanded-italic;
+  src: url(../../assets/font/Maya-Expanded-Italic.otf);
+}
+@font-face {
+  font-family: Maya-Regular;
+  src: url(../../assets/font/Maya-Regular.otf);
+}
+@font-face {
+  font-family: Maya-Regular-Italic;
+  src: url(../../assets/font/Maya-Regular-Italic.otf);
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+
+html::-webkit-scrollbar {
+  display:none;
+}
+
+body {
+  background-color: #111111;
+  color: white;
+}
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('../../assets/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .9;
+  visibility: visible;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@media (max-width: 596px) {
+  .bg {
+    display: none;
+  }
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+#nprogress {
+  z-index: 1000 !important;
+}
+
+#nprogress .bar {
+  height: 5px !important;
+  background-color: #3cfb7e !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #3cfb7e, 0 0 5px #3cfb7e !important;
+}
+
+.svgBarSide {
+  transform: scale(-0.9, 1);
+}
+
+.svgAnim {
+  transform: scale(-0.65, 1);
+}
+
+@media (min-width: 1440px) {
+  .svgAnim {
+    transform: scale(-0.9, 1);
+  }
+}
+
+.alice-carousel__slide-info {
+  position: absolute;
+  top: unset !important;
+  right: unset !important;
+  bottom: 42px !important;
+  left: 48px !important;
+  display: inline-block;
+  padding: 0 !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+  background-color: transparent !important;
+  font-family: Maya-Regular;
+  font-weight: bold;
+}
